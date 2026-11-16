@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#126b3a">
+  <title>Painel do Morador | CAC COHAB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header-container">
+    <div class="logo-container">
+      <img src="log_cac_redimens.png" alt="Logotipo do Conselho de Ação Comunitária da COHAB I" class="logo">
+    </div>
+    <h1>Conselho de Ação Comunitária da COHAB I</h1>
+    <div class="user-access">
+      <div class="welcome-box">
+        <p>Olá, <strong>Morador</strong>! Bem-vindo ao painel.</p>
+        <a href="index.html" id="btnSair">Sair do sistema</a>
+      </div>
+    </div>
+    <nav class="nav-bar" aria-label="Menu principal">
+      <a href="home.html" class="active" aria-current="page">Painel</a>
+      <a href="institucional.html">Sobre nós</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="noticias.html">Notícias</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="report-section">
+      <h1>Registrar ocorrência ou problema</h1>
+      <p>Utilize o espaço abaixo para relatar problemas com iluminação, buracos, saneamento ou outras demandas da sua rua.</p>
+
+      <form id="formularioProblema">
+        <div class="input-group">
+          <label for="tipoProblema">Tipo de problema:</label>
+          <select id="tipoProblema" required>
+            <option value="">Selecione uma categoria...</option>
+            <option value="iluminacao">Falta de Iluminação Pública</option>
+            <option value="asfalto">Buraco na Rua / Asfalto Danificado</option>
+            <option value="Saneamento">Vazamento de Água / Esgoto</option>
+            <option value="lixo">Acúmulo de Lixo / Entulho</option>
+            <option value="outro">Outros Assuntos</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="ruaProblema">Rua / Ponto de referência:</label>
+          <input type="text" id="ruaProblema" placeholder="Ex.: Rua das Flores, próximo ao número 120" required>
+        </div>
+
+        <div class="input-group">
+          <label for="descricaoProblema">Descrição detalhada:</label>
+          <textarea id="descricaoProblema" rows="5" placeholder="Descreva o que está acontecendo para que o Conselho possa avaliar..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-entrar">Enviar relato ao Conselho</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="scripthome.js" defer></script>
+</body>
+</html>

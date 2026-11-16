@@ -1,0 +1,16 @@
+CAC COHAB — arquivos HTML padronizados
+
+Conteúdo:
+- index.html, institucional.html, projetos.html, noticias.html, home.html
+- cadastro.html e redefinirsenha.html (estrutura dos formulários preservada)
+- style.css (folha de estilos compartilhada)
+- imagens disponíveis no momento da montagem
+
+IMPORTANTE:
+1. Coloque estes arquivos na mesma pasta do projeto publicado no GitHub Pages.
+2. Mantenha também os arquivos JavaScript originais: scriptinicial.js, scriptcadastro.js,
+   scriptredefinir.js e scripthome.js.
+3. Mantenha a configuração original do Supabase nos arquivos JavaScript.
+4. Se alguma imagem não estiver incluída no ZIP, envie-a para a mesma pasta e confira
+   se o nome do arquivo coincide exatamente com o caminho no HTML (maiúsculas/minúsculas).
+5. A página inicial de login continua dependendo da lógica existente em scriptinicial.js.

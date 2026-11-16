@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#126b3a">
+  <title>CAC COHAB | Portal Institucional</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header-container">
+    <div class="logo-container">
+      <img src="log_cac_redimens.png" alt="Logotipo do Conselho de Ação Comunitária da COHAB I" class="logo">
+    </div>
+    <h1>Conselho de Ação Comunitária da COHAB I</h1>
+
+    <div class="user-access">
+      <form class="login-form" id="loginForm">
+        <div class="input-group">
+          <label for="username">E-mail</label>
+          <input type="email" id="username" name="username" autocomplete="username" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn-entrar">Entrar</button>
+      </form>
+
+      <div class="esqueci-senha-box">
+        <a href="redefinirsenha.html" id="btnEsqueciSenha">Esqueci minha senha</a>
+      </div>
+
+      <div class="signup-row">
+        <span>Não tem cadastro?</span>
+        <a href="cadastro.html" class="btn-cadastrar">Cadastrar-se</a>
+      </div>
+    </div>
+
+    <nav class="nav-bar" aria-label="Menu principal">
+      <a href="index.html" class="active" aria-current="page">Início</a>
+      <a href="institucional.html">Sobre nós</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="noticias.html">Notícias</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <h1>Bem-vindo ao nosso conselho</h1>
+      <p>Um espaço de participação e diálogo para a comunidade.</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="scriptinicial.js" defer></script>
+</body>
+</html>
