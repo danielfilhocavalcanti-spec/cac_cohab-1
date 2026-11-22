@@ -1,0 +1,184 @@
+/* Feed de publicações enviadas pelo WhatsApp.
+   Reaproveita .noticias, .eventos e .cursos-gr do style.css. */
+
+/* Imagens que abrem ampliadas ao clicar */
+main figure img[data-zoom] {
+  cursor: zoom-in;
+}
+
+main figure img[data-zoom]:focus-visible {
+  outline: 3px solid var(--amarelo);
+  outline-offset: 3px;
+}
+
+/* Visualizador de imagem (tela cheia) */
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.lb[hidden] {
+  display: none;
+}
+
+.lb-fechar {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 1;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  border: 0;
+  border-radius: 50%;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lb-fechar:hover,
+.lb-fechar:focus-visible {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* margin:auto na imagem centraliza sem cortar o início quando ela é maior que a tela */
+.lb-area {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  padding: 62px 12px 8px;
+  overflow: auto;
+  touch-action: pan-x pan-y pinch-zoom;
+}
+
+.lb-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 96vw;
+  max-height: calc(100vh - 150px);
+  margin: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  cursor: zoom-in;
+}
+
+.lb.zoom .lb-img {
+  max-width: none;
+  max-height: none;
+  cursor: zoom-out;
+}
+
+.lb-legenda {
+  flex: 0 0 auto;
+  max-width: min(900px, 94vw);
+  max-height: 80px;
+  margin: 0 auto;
+  padding: 8px 12px 14px;
+  overflow: auto;
+  color: #fff;
+  font-size: 0.95rem;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.lb.zoom .lb-legenda {
+  display: none;
+}
+
+/* Página de Notícias ocupa toda a largura da tela (só esta página usa main-largo) */
+main.main-largo {
+  width: calc(100% - 48px);
+}
+
+@media (max-width: 768px) {
+  main.main-largo {
+    width: calc(100% - 24px);
+  }
+}
+
+/* Página de Notícias em duas colunas no computador; empilhada no celular */
+.noticias-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 26px;
+  width: 100%;
+}
+
+.noticias-layout > .coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  min-width: 0;
+}
+
+.noticias-layout section.noticias {
+  margin: 0;
+}
+
+@media (min-width: 900px) {
+  .noticias-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Dentro de cada coluna, um cartão por linha */
+  .noticias-layout .eventos {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Telas largas: dois cartões por linha em cada coluna, para aproveitar o espaço */
+@media (min-width: 1400px) {
+  .noticias-layout .eventos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+#feed-whatsapp figcaption {
+  white-space: pre-line;
+}
+
+.feed-data {
+  display: block;
+  margin-top: 4px;
+  color: var(--texto-suave);
+  font-size: 0.82rem;
+}
+
+/* Prévia compacta (página inicial): 1 coluna no celular, 3 no computador */
+.feed-previa img {
+  max-height: 220px;
+}
+
+.feed-previa figcaption {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .feed-previa {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.feed-mais {
+  margin: 18px 0 0;
+  text-align: center;
+}
+
+.feed-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--texto-suave);
+  text-align: center;
+}

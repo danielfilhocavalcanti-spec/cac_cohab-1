@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#126b3a">
   <title>CAC COHAB | Portal Institucional</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="feed-whatsapp.css">
 </head>
 <body>
   <header class="header-container">
@@ -50,9 +51,21 @@
       <h1>Bem-vindo ao nosso conselho</h1>
       <p>Um espaço de participação e diálogo para a comunidade.</p>
     </section>
+
+    <section class="noticias" id="previa-atualizacoes">
+      <h1>Últimas atualizações</h1>
+      <p>Veja o que o Conselho publicou recentemente.</p>
+
+      <div class="eventos feed-previa" id="feed-whatsapp" data-limite="3" aria-live="polite">
+        <p class="feed-status">Carregando...</p>
+      </div>
+
+      <p class="feed-mais"><a class="btn-cadastrar" href="noticias.html">Ver todas as atualizações</a></p>
+    </section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="scriptinicial.js" defer></script>
+  <script src="feed-whatsapp.js" defer></script>
 </body>
 </html>
