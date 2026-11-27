@@ -7,6 +7,7 @@
   <meta name="description" content="Notícias, comunicados e atividades do Conselho de Ação Comunitária da COHAB I.">
   <title>Notícias | CAC COHAB</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="feed-whatsapp.css">
 </head>
 <body>
   <header class="header-container">
@@ -24,12 +25,24 @@
     </nav>
   </header>
 
-  <main>
+  <main class="main-largo">
     <section class="hero-section">
       <h1>Principais notícias</h1>
       <p>Este espaço será utilizado para divulgar comunicados, novidades e informações de interesse da comunidade.</p>
     </section>
 
+    <!-- Duas colunas no computador: publicações do WhatsApp | conteúdo fixo do site -->
+    <div class="noticias-layout">
+    <section class="noticias" id="atualizacoes">
+      <h1>Últimas atualizações</h1>
+      <p>Publicações recentes do Conselho, atualizadas em tempo real.</p>
+
+      <div class="eventos" id="feed-whatsapp" aria-live="polite">
+        <p class="feed-status">Carregando...</p>
+      </div>
+    </section>
+
+    <div class="coluna">
     <section class="noticias">
       <h1>Novidades</h1>
       <p>Venha conhecer nossas novidades!</p>
@@ -44,6 +57,7 @@
             </figure>
           </div>
         </article>
+
         <article class="cursos-gr">
           <h2>Mais projetos chegando</h2>
           <div class="img-curso">
@@ -102,7 +116,7 @@
             </figure>
           </div>
         </article>
-        
+
         <article class="cursos-gr">
           <h2>Curso de eletricista</h2>
           <div class="img-curso">
@@ -112,7 +126,7 @@
             </figure>
           </div>
         </article>
-        
+
         <article class="cursos-gr">
           <h2>Parceria com a Nordeste Sorriso</h2>
           <div class="img-curso">
@@ -122,7 +136,7 @@
             </figure>
           </div>
         </article>
-        
+
         <article class="cursos-gr">
           <h2>Tabela de basquete implantada</h2>
           <div class="img-curso">
@@ -132,8 +146,8 @@
             </figure>
           </div>
         </article>
-        
-         <article class="cursos-gr">
+
+        <article class="cursos-gr">
           <h2>Recadastramento de documentos das casas</h2>
           <div class="img-curso">
             <figure>
@@ -144,9 +158,12 @@
         </article>
       </div>
     </section>
+    </div>
+    </div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="scriptinicial.js" defer></script>
+  <script src="feed-whatsapp.js" defer></script>
 </body>
 </html>
